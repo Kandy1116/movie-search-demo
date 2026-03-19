@@ -39,11 +39,15 @@ function MovieSearch() {
   }
 
   async function doSearch(q) {
+    // --- DEBUGGING STARTS HERE ---
+    console.log('1. API Key being used by the app:', OMDB_API_KEY);
+    
     if (!q || q.trim().length < 2) {
       setItems([]);
       return;
     }
     if (!OMDB_API_KEY) {
+      console.error('2. ERROR: No API Key was found. Check the .env.local file.');
       setItems([]);
       return;
     }
@@ -54,21 +58,29 @@ function MovieSearch() {
     setLoading(true);
     try {
       const url = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(q)}&type=movie&page=1`;
+      console.log('3. Fetching data from this URL:', url);
+
       const res = await fetch(url, { signal: abortRef.current.signal });
-      if (!res.ok) throw new Error('Search failed');
+      if (!res.ok) throw new Error(`Search failed with status: ${res.status}`);
+      
       const data = await res.json();
+      console.log('4. Received response from API:', data);
+
       if (data.Response === 'True') {
         setItems(data.Search || []);
       } else {
         setItems([]);
+        console.error('5. API returned an error message:', data.Error);
       }
     } catch (e) {
+      console.error('6. A critical error occurred during the fetch:', e);
       if (e.name !== 'AbortError') {
         setItems([]);
       }
     } finally {
       setLoading(false);
     }
+    // --- DEBUGGING ENDS HERE ---
   }
 
   async function fetchAndCacheDetails(imdbID) {
@@ -91,7 +103,7 @@ function MovieSearch() {
 
   function parseYearValue(yearStr) {
     if (!yearStr) return null;
-    const m = String(yearStr).match(/\d{4}/);
+    const m = String(yearStr).match(/\\d{4}/);
     return m ? parseInt(m[0], 10) : null;
   }
 
@@ -181,7 +193,7 @@ function MovieSearch() {
             <Link to="/search" className="nav-link active">Search</Link>
           </div>
           <div className="nav-right">
-            <h1 className="logo">Longhorn Film Productions</h1>
+            <h1 className="logo">Movie Search Demo</h1>
           </div>
           <div className="search-group">
             <input
