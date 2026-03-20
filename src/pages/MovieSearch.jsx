@@ -189,7 +189,7 @@ function MovieSearch() {
         <div className="container header-inner">
           <div className="nav-left">
             <Link to="/" className="nav-home-link">Home</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
+            <Link to="/about" className="nav-link">About</Link>
             <Link to="/search" className="nav-link active">Search</Link>
           </div>
           <div className="nav-right">
@@ -423,7 +423,7 @@ function MovieSearch() {
 
       <footer className="site-footer">
         <div className="container">
-          <p>© 2025 Movie Search App</p>
+          <p>© 2026 Movie Search Demo</p>
         </div>
       </footer>
     </>
