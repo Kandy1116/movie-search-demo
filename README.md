@@ -1,24 +1,10 @@
-This is a movie search application that allows users to find movies and view details using external APIs like TMDB. ()
+Search and discover movies with real-time API data and interactive UI.
 
-Tech Stack
+Tech Stack: React, JavaScript, CSS, HTML, TMDB API
 
-HTML
-CSS
-JavaScript
-API integration
+Run Locally:
+1. Clone repo: `git clone https://github.com/Kandy1116/MovieFinder.git`
+2. Install dependencies: `npm install`
+3. Start dev server: `npm start`
 
-Prerequisites
-
-A TMDB API key may be required
-
-Getting Started
-
-To start the application, please follow the steps below
-
-Clone the repository
-git clone https://github.com/Kandy1116/MovieFinder.git
-
-Navigate into the project folder
-cd MovieFinder
-
-Open index.html in your browser
+Live Demo: [MovieFinder Live](https://your-demo-link.vercel.app)
