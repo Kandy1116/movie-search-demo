@@ -1,12 +1,24 @@
-# Movie-Link-Updated---Model-6-Final-Project
+This is a movie search application that allows users to find movies and view details using external APIs like TMDB. ()
 
-This is a React (Vite) port of the Movie Search UI powered by OMDb.
+Tech Stack
 
-Getting started
-- Install: `npm install`
-- Set API key: create `.env.local` with `VITE_OMDB_API_KEY=YOUR_KEY`
-- Run dev server: `npm run dev`
+HTML
+CSS
+JavaScript
+API integration
 
-Notes
-- `.env.local` is git-ignored to avoid committing API keys.
-- Filters include sort, year range, and minimum IMDb rating.
+Prerequisites
+
+A TMDB API key may be required
+
+Getting Started
+
+To start the application, please follow the steps below
+
+Clone the repository
+git clone https://github.com/Kandy1116/MovieFinder.git
+
+Navigate into the project folder
+cd MovieFinder
+
+Open index.html in your browser
